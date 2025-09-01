@@ -1,11 +1,61 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
   margin: 0;
   padding: 0;
   border: 0;
@@ -26,7 +76,8 @@ body {
   background: white;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -36,21 +87,246 @@ table {
   border-spacing: 0;
 }
 
-caption, th, td {
+caption,
+th,
+td {
   text-align: left;
   font-weight: normal;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: "";
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: "" "";
 }
 
 input[type=date]::-webkit-inner-spin-button {
   display: none;
 }
+
 /*# sourceMappingURL=all.css.map */
+
+body {
+  padding-bottom: 90px;
+  background-color: #DDDD;
+}
+
+/// IGNORE ---
+.header {
+  &_background {
+    background: #424242;
+    height: 300px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_bmi_img {
+    background-image: url(../img/BMICLogo.png);
+    width: 117px;
+    height: 117px;
+  }
+
+  &_input {
+
+    // 讓每組 label+input 垂直排列
+    >div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      &:last-child {
+        margin-top: 23px;
+      }
+    }
+
+    label {
+      font-size: 18px;
+      color: #FFD366;
+    }
+
+    input {
+      width: 250px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 2px solid #FFD366;
+      border-radius: 10px;
+      font-size: 24px;
+      color: #FFD366;
+      padding-left: 16px;
+      margin-top: 4px;
+          &:focus {
+      box-shadow: 0 4px 16px rgba(255, 211, 102, 0.35); // 聚焦時加強
+      outline: none;
+      border-color: #FF982D; // 聚焦時可換色
+    }
+    }
+  }
+
+  &_content {
+    display: flex;
+    justify-content: center; // 固定置中
+    align-items: center;
+    gap: clamp(24px, 6vw, 97px); // 間距最寬到97px，最窄24px
+  }
+
+  &_result {
+    background-color: #FFD366;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #424242;
+      &:hover {
+    box-shadow: 0 1px 6px 3px rgba(255,196,50,0.64);
+  }
+    &.active {
+    background: #DEA821;
+  }
+  }
+}
+
+@media (max-width: 768px) {
+  .header_background {
+    height: auto;
+    padding: 24px 0;
+  }
+
+  .header_content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .header_bmi_img {
+    margin: 0 auto;
+  }
+
+  .header_input>div {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .header_input input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .header_result {
+    margin: 0 auto;
+  }
+}
+
+.content {
+  div>ul {
+    display: flex;
+    width: 624px;
+    height: 62px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 11px;
+    background-color: #FFFFFF;
+    font-size: 20px;
+    color: #4A4A4A;
+    margin: 0 auto; // 加這行就會置中
+    margin-top: 16px;
+  
+    &.lieght_green {
+      border-left: 7px solid #86D73F;
+    }
+
+    &.lieght_blue {
+      border-left: 7px solid #31BAF9;
+    }
+
+    &.lieght_orange {
+      border-left: 7px solid #FF982D;
+    }
+
+    &.lieght_red {
+      border-left: 7px solid #FF1200;
+    }
+
+    li>span {
+      font-size: 12px;
+      color: #424242;
+    }
+  }
+
+  label {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    color: #424242;
+    margin: 36px 0px;
+  }
+}
+
+@media (max-width: 700px) {
+  .content div > ul {
+    width: 98vw;
+    min-width: 0;
+    font-size: 24px;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    background-color: #fff;
+  }
+  .content div > ul li {
+    width: 100%;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center; // 全部置中
+    text-align: center;      // 全部置中
+  }
+  .content div > ul li > span {
+    font-size: 20px;
+    margin-right: 8px;       // span 與文字間距
+    color: #424242;
+  }
+  .content div > ul li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .content label {
+    font-size: 20px;
+    margin: 24px 0;
+    text-align: center;
+  }
+}
+
+footer {
+  height: 90px;
+  background-color: #FFD366;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  
+}
+.footer_img{
+  background-image: url(../img/BMICLogo＿footer.png);
+  width: 55px;
+  height: 55px;
+  margin: 18px auto;
+}
