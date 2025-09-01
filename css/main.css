@@ -245,7 +245,7 @@ body {
   margin: 36px 0px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .content div > ul {
     width: 98vw;
     min-width: 0;
