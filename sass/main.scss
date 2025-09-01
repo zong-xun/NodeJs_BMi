@@ -115,6 +115,11 @@ input[type=date]::-webkit-inner-spin-button {
 body {
   padding-bottom: 90px;
   background-color: #DDDD;
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 0; // 移除原本的 padding-bottom
+  background-color: #DDDD;
 }
 
 /// IGNORE ---
@@ -319,11 +324,12 @@ body {
 footer {
   height: 90px;
   background-color: #FFD366;
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
-  z-index: 10;
+  margin-top: 30px; // 讓 footer 推到最底
+  position: static; // 或直接移除 position
+  left: unset;
+  bottom: unset;
+  z-index: unset;
   
 }
 .footer_img{
