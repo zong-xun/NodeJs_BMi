@@ -319,13 +319,16 @@ body {
     margin: 24px 0;
     text-align: center;
   }
+    .content div > ul:last-child {
+    margin-bottom: 32px; // 或你想要的間距
+  }
 }
 
 footer {
   height: 90px;
   background-color: #FFD366;
   width: 100%;
-  margin-top: 30px; // 讓 footer 推到最底
+  margin-top: auto; // 讓 footer 推到最底
   position: static; // 或直接移除 position
   left: unset;
   bottom: unset;

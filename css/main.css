@@ -291,12 +291,15 @@ body {
     margin: 24px 0;
     text-align: center;
   }
+  .content div > ul:last-child {
+    margin-bottom: 32px;
+  }
 }
 footer {
   height: 90px;
   background-color: #FFD366;
   width: 100%;
-  margin-top: 30px;
+  margin-top: auto;
   position: static;
   left: unset;
   bottom: unset;
