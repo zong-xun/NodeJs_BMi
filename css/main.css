@@ -182,6 +182,7 @@ body {
 }
 .header_result:hover {
   box-shadow: 0 1px 6px 3px rgba(255, 196, 50, 0.64);
+  cursor: pointer;
 }
 .header_result.active {
   background: #DEA821;
@@ -201,13 +202,14 @@ body {
     margin: 0 auto;
   }
   .header_input > div {
-    width: 100%;
-    max-width: 300px;
     margin: 0 auto;
+    max-width: 300px;
   }
   .header_input input {
     width: 100%;
-    max-width: 300px;
+    max-width: 340px;
+    box-sizing: border-box;
+    margin: 0 auto;
   }
   .header_result {
     margin: 0 auto;
