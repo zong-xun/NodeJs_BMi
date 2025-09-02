@@ -128,10 +128,10 @@ onValue(bmiQuery, (snapshot) => {
         }
         bmiLogList.innerHTML += `
       <ul class="${lieght_coloer}">
-        <li><span>${item.result}</span></li>
-        <li><span>BMI</span><span>${item.bmi}</span> </li>
-        <li><span>weight</span><span>${item.weight}</span> </li>
-        <li><span>height</span>${item.height}</span></li>
+        <li>${item.result}</li>
+        <li><span>BMI </span><span>${item.bmi}</span> </li>
+        <li><span>weight </span><span>${item.weight}</span> </li>
+        <li><span>height </span>${item.height}</span></li>
         <li><span>${formattedDate}</span></li>
       </ul>`;
     });
