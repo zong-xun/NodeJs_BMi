@@ -180,12 +180,80 @@ body {
   font-size: 24px;
   color: #424242;
 }
+.header_result_color_green {
+  border: 6px solid #86D73F;
+  color: #86D73F;
+}
+.header_result_color_blue {
+  border: 6px solid #31BAF9;
+  color: #31BAF9;
+}
+.header_result_color_orange {
+  border: 6px solid #FF982D;
+  color: #FF982D;
+}
+.header_result_color_red {
+  border: 6px solid #FF1200;
+  color: #FF1200;
+}
 .header_result:hover {
   box-shadow: 0 1px 6px 3px rgba(255, 196, 50, 0.64);
   cursor: pointer;
 }
 .header_result.active {
   background: #DEA821;
+}
+.header_result_last {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  font-size: 24px;
+  text-align: center;
+  position: relative;
+}
+.header_result_last_inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header_result_last_inner p {
+  margin: 0;
+  line-height: 1.4;
+}
+.header_result_last_inner p:last-child {
+  font-size: 15px;
+}
+.header_result_img {
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/icons_loop.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 15px;
+  right: -8px;
+  cursor: pointer;
+}
+.header_result_img_color_green {
+  background-color: #86D73F;
+}
+.header_result_img_color_blue {
+  background-color: #31BAF9;
+}
+.header_result_img_color_orange {
+  background-color: #FF982D;
+}
+.header_result_img_color_red {
+  background-color: #FF1200;
+}
+.header_result_img:hover {
+  box-shadow: 0 1px 6px 3px #86D73F;
+  opacity: 0.7;
+}
+.header_result_display_none {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -214,6 +282,9 @@ body {
   .header_result {
     margin: 0 auto;
   }
+  .header_result_last {
+    margin: 0 auto;
+  }
 }
 .content div > ul {
   display: flex;
@@ -228,6 +299,15 @@ body {
   margin: 0 auto;
   margin-top: 16px;
 }
+.content div > ul > li {
+  width: 80px;
+}
+.content div > ul > li:first-child {
+  width: 60px;
+}
+.content div > ul:last-child {
+  margin-bottom: 30px;
+}
 .content div > ul.lieght_green {
   border-left: 7px solid #86D73F;
 }
@@ -240,7 +320,7 @@ body {
 .content div > ul.lieght_red {
   border-left: 7px solid #FF1200;
 }
-.content div > ul li > span {
+.content div > ul li > span:first-child {
   font-size: 12px;
   color: #424242;
 }
@@ -277,6 +357,9 @@ body {
     justify-content: center;
     text-align: center;
     box-sizing: border-box;
+  }
+  .content div > ul li:first-child {
+    width: 100%;
   }
   .content div > ul li > span {
     font-size: 20px;
